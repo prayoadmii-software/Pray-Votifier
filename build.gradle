@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    maven {
+        name = 'papermc'
+        url = uri('https://repo.papermc.io/repository/maven-public/')
+    }
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:${paper_api_version}"
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+}
+
+jar {
+    archiveFileName = "prayvotifier-${project.version}.jar"
+}
