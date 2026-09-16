@@ -1,6 +1,11 @@
 plugins {
     id 'java'
+    id 'io.papermc.paperweight.userdev' version '2.0.0-beta.23'
+    id 'xyz.jpenilla.run-paper' version '3.1.0'
 }
+
+group = 'git.prayoadmii'
+version = '1.0.0'
 
 repositories {
     maven {
@@ -10,13 +15,22 @@ repositories {
 }
 
 dependencies {
-    compileOnly "io.papermc.paper:paper-api:${paper_api_version}"
+    paperweight.paperDevBundle("${minecraft_version}.build.+")
+}
+
+processResources {
+    filesMatching('plugin.yml') {
+        expand(
+            plugin_version: project.version,
+            minecraft_version: project.minecraft_version
+        )
+    }
 }
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(25)
 }
 
-jar {
+tasks.jar {
     archiveFileName = "prayvotifier-${project.version}.jar"
 }
