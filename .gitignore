@@ -1,14 +1,17 @@
 # Gradle
 .gradle/
+gradle-*/
+
+# Build output
 build/
 
-# IDE / Eclipse
+# IDE Thingy
 bin/
 
-# Local Minecraft Server
+# Local Minecraft server
 run/
 
-# Java Crash Logs
+# Java crash logs
 hs_err_pid*
 replay_pid*
 
