@@ -25,4 +25,5 @@ replay_pid*
 
 # Why?
 build/
+bin/
 run/

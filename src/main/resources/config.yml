@@ -1,0 +1,74 @@
+# Pray Votifier Config
+
+# Welcome To Pray Votifier Config!
+# This Is The Where You Can Config Everything In Pray Votifier!
+
+# This Is Web Server Configurations
+# Here You Can Configure The Web Server For Vote Request
+webserver:
+  # The Port For The Web Server
+  port: 8080
+
+  # The Address To Bind To
+  host: "0.0.0.0"
+
+  # Only Configure This If You Using Reverse Proxy!
+  # Leave It Empty If You Not Using Reverse Proxy!
+  # If You Use
+  # Cloudflare Tunnel - You Should Set This To "CF-Connecting-IP"
+  # Nginx - You Should Set This To Your Nginx Configured IP Header
+  # Port Forwarding - You Should Leave This Empty
+  # This Is Empty By Default... If You Not Using Reverse Proxy Please Leave It Empty!
+  rp-header: ""
+
+# Here Is The Votifier Configurations
+votifier:
+  # Save Method For Vote Data
+  # This Is Used When Player Vote For This Server But The Player Is Not Online
+  # You Can Choose Only file For Now The Database Method Is Not Implemented Yet!
+  # Invalid Value Will Be Default To file
+  save-method: "file"
+
+  # Key File
+  # This Is The Name Of The Key File We Save The Token On
+  # You Can Manually Edit This File But Make Sure It Is Encoded In UTF-8!
+  key-file: "votifier.key"
+
+  # Command File
+  # This Is The Name Of The Command File Include List Of Commands To Execute When Player Vote For This Server
+  # Open The File And Add Your Commands In The File To Execute When Player Vote For This Server
+  command-file: "commands.yml"
+
+  # Timeout For Vote Request In Days
+  # This Is When The Server Will Close The Vote Request
+  # This Reduces The Size Of The Vote Request File If Players Just Vote With Random Username
+  # The Default Value Is 1 Day
+  timeout: 1
+
+# ============================================================================
+# This Is Coming Soon Configs And If You Change Settings Will Effect Nothing
+# You Can View Them For Now But Change Them Will Effect Nothing
+# ============================================================================
+
+# Proxy Config
+# This Is Required If Your Server Using Velocity With Our Velocity Version Of Plugin Installed
+proxy:
+  # If This Enabled The Built-In Web Server Will Be Disabled
+  # And Let The Proxy Handle The Vote Request
+  # Require The Proxy Plugin Installed On The Proxy Server
+  demand-on-proxy: false
+
+  # Do The Vote Data Save On Proxy Or Each Server Have Their Own Vote Data File?
+  # This Will Ignored If You're Using Database Save Method
+  # Or The Proxy Plugin Not Detected By The Server Plugin
+  save-data-on-proxy: true
+
+  # If This Enabled The Proxy Command That Included In The votifier.command-file
+  # Example: /server some-server Or /glist all And Any Command That Only Exist On The Proxy
+  # Will Be Forwarded To The Proxy To Execute The Command
+  # Overwise The Plugin May Error With The Command Not Found On The Server
+  # Don't Worry The Command That Exist On The Server Will Still Be Executed On The Server
+  command-forward-to-proxy: true
+
+# Do Not Ever Think Or About Touching This Thing!
+cfg-ver: 1
