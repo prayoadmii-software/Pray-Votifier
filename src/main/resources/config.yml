@@ -3,23 +3,15 @@
 # Welcome To Pray Votifier Config!
 # This Is The Where You Can Config Everything In Pray Votifier!
 
-# This Is Web Server Configurations
-# Here You Can Configure The Web Server For Vote Request
-webserver:
-  # The Port For The Web Server
-  port: 8080
+# This Is The Votifier Server Configurations
+votifier-server:
+  # Votifier Server Port
+  # This Is The Port That Votifier Server Will Listen To
+  # This Will Host Votifier Standard Server
+  port: 8192
 
   # The Address To Bind To
   host: "0.0.0.0"
-
-  # Only Configure This If You Using Reverse Proxy!
-  # Leave It Empty If You Not Using Reverse Proxy!
-  # If You Use
-  # Cloudflare Tunnel - You Should Set This To "CF-Connecting-IP"
-  # Nginx - You Should Set This To Your Nginx Configured IP Header
-  # Port Forwarding - You Should Leave This Empty
-  # This Is Empty By Default... If You Not Using Reverse Proxy Please Leave It Empty!
-  rp-header: ""
 
 # Here Is The Votifier Configurations
 votifier:
