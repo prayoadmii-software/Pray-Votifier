@@ -70,5 +70,5 @@ proxy:
   # Don't Worry The Command That Exist On The Server Will Still Be Executed On The Server
   command-forward-to-proxy: true
 
-# Do Not Ever Think Or About Touching This Thing!
+# Don't Ever Think About Touching This Thing!
 cfg-ver: 1

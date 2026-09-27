@@ -23,7 +23,8 @@
 hs_err_pid*
 replay_pid*
 
-# Why?
+# U GUYS ARE SO NOT REQUIRED
+.gradle/
 build/
 bin/
 run/

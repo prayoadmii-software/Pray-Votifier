@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'io.papermc.paperweight.userdev' version '2.0.0-beta.23'
     id 'xyz.jpenilla.run-paper' version '3.1.0'
+    id 'com.gradleup.shadow' version "9.3.1"
 }
 
 repositories {
@@ -14,6 +15,8 @@ repositories {
 }
 
 dependencies {
+    implementation("org.bstats:bstats-bukkit:3.2.1")
+
     paperweight.paperDevBundle("${minecraft_version}.build.+")
 
     compileOnly("dev.jorel:commandapi-paper-core:${commandapi_version}")
@@ -40,4 +43,17 @@ tasks.named('runServer') {
     jvmArgs = providers.gradleProperty('serverArgs')
         .map { it.tokenize() }
         .getOrElse([])
+}
+
+tasks.shadowJar {
+    configurations = [project.configurations.runtimeClasspath]
+
+    dependencies {
+        // Only merge bStats into the final jar, no other dependencies
+        exclude { it.moduleGroup != "org.bstats" }
+    }
+
+    // Relocate bStats into the plugin's package to avoid conflicts with other
+    // plugins using bStats
+    relocate("org.bstats", project.group.toString())
 }
