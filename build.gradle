@@ -4,10 +4,9 @@ plugins {
     id 'xyz.jpenilla.run-paper' version '3.1.0'
 }
 
-group = 'git.prayoadmii'
-version = '1.0.0'
-
 repositories {
+    mavenCentral()
+
     maven {
         name = 'papermc'
         url = uri('https://repo.papermc.io/repository/maven-public/')
@@ -16,6 +15,8 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("${minecraft_version}.build.+")
+
+    compileOnly("dev.jorel:commandapi-paper-core:${commandapi_version}")
 }
 
 processResources {
@@ -33,4 +34,10 @@ java {
 
 tasks.jar {
     archiveFileName = "prayvotifier-${project.version}.jar"
+}
+
+tasks.named('runServer') {
+    jvmArgs = providers.gradleProperty('serverArgs')
+        .map { it.tokenize() }
+        .getOrElse([])
 }
