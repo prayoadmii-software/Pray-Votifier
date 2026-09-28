@@ -6,6 +6,7 @@ gradle-*/
 build/
 
 # IDE Thingy
+.vscode/
 bin/
 
 # Local Minecraft server

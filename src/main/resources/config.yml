@@ -3,11 +3,15 @@
 # Welcome To Pray Votifier Config!
 # This Is The Where You Can Config Everything In Pray Votifier!
 
+# If You're Finding bStats Config Please Look Into
+# plugins/bStats/config.yml
+
 # This Is The Votifier Server Configurations
+# Will Use Votifier Standard Protocol
 votifier-server:
   # Votifier Server Port
   # This Is The Port That Votifier Server Will Listen To
-  # This Will Host Votifier Standard Server
+  # Raw TCP Port Forward Is Needed
   port: 8192
 
   # The Address To Bind To
@@ -15,16 +19,33 @@ votifier-server:
 
 # Here Is The Votifier Configurations
 votifier:
+  # Protocol Version Of Votifier
+  # See https://mcstatus.io/tools/vote
+  # In V1 (1) Will Use Only The key-file
+  # In V2 (2) Will Use Only token
+  # WARNING: V1 And V2 Are Talk In Different Packets!
+  # If You See The Website Ask For Token This Will Be 2
+  # If It Ask For Content In rsa/public.key This Will Be 1
+  # Invalid Values Will Default To 2
+  protocol-ver: 2
+
   # Save Method For Vote Data
   # This Is Used When Player Vote For This Server But The Player Is Not Online
   # You Can Choose Only file For Now The Database Method Is Not Implemented Yet!
   # Invalid Value Will Be Default To file
   save-method: "file"
 
-  # Key File
+  # Token (V2)
+  # This Is Token For Votifier
+  # Leave This Empty ("") Will Generate New Token When Server Start
+  # This Don't Work If You Set protocol-ver To 1
+  token: ""
+
+  # Public Key File (V1)
   # This Is The Name Of The Key File We Save The Token On
   # You Can Manually Edit This File But Make Sure It Is Encoded In UTF-8!
-  key-file: "votifier.key"
+  # This Don't Work If You Set protocol-ver To 2
+  key-file: "rsa/public.key"
 
   # Command File
   # This Is The Name Of The Command File Include List Of Commands To Execute When Player Vote For This Server
@@ -62,5 +83,32 @@ proxy:
   # Don't Worry The Command That Exist On The Server Will Still Be Executed On The Server
   command-forward-to-proxy: true
 
-# Don't Ever Think About Touching This Thing!
+
+# DON'T EVER THINK TO TOUCH THIS THING
+# YOU WILL REGRET IT WHEN YOU REPLACE A PLUGIN JAR FILE WITH NEWER/OLDER VERSION
+# SO PLEASE DON'T TOUCH THIS
+# I'M BEGGING YOU
+# PLEASE DON'T
+# ACTUALLY YOU CAN TOUCH IT BUT DON'T OPEN ISSUES IF SOMETHING WENT WRONG
+# WILL YOU STOP READING THIS?
+# HELLO?
+# NO NO SCROLL UP
+# THIS IS NOT FOR YOU
+# SCROLL UP NOW
+# TRUST ME SCROLL UP
+# YOU DON'T WANNA MEET A GOD IF YOU TOUCH THIS
+# PLEASE I'M BEGGING YOU
+# GO UP
+# ...
+# JUST SCROLL UP
+# WHY YOU KEEP READING THIS
+# JUST PLEASE
+# ... Ok... Fine... I Will Stop Now...
+# Are You Even Reading?
+# Just Don't Touch It...
+# Bye
+# And Don't Scroll Down More...
 cfg-ver: 1
+
+# You Can Watch What cfg-ver Are Used For Here
+# https://www.youtube.com/watch?v=dQw4w9WgXcQ
