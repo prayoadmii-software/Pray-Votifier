@@ -1,10 +1,10 @@
 package git.prayoadmii.prayvotifier;
 
 import org.bstats.bukkit.Metrics;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PrayVotifier extends JavaPlugin {
-
     @Override
     public void onEnable() {
         saveDefaultConfig();
@@ -13,7 +13,7 @@ public class PrayVotifier extends JavaPlugin {
 
         int pluginId = 34350;
         new Metrics(this, pluginId);
-        getLogger().info("bStats Now Started!");
+        getLogger().info("bStats Are Now Started!");
     }
 
     @Override

@@ -1,0 +1,35 @@
+# This Is Commands Config File
+
+# Here's Placeholder You Can Use
+# %player% - This Include Player Name (PrayoadMii For Example)
+# Useful When You Have Command Like /give %player% minecraft:air 2500
+
+# Here's Command Prefix That You Can Put Them To Do Other Action That Not Run Commands
+# CHAT:<message> - Sends A Chat Message To The Voting Player (Can Use Classic Text Formatting Like &a&lHi&r)
+# You Can Also Use CHATG:<message> To Make Everyone In The Server See The Chats Too
+# CMD-ON-PROXY:<command> - This Will Force Command To Run On Velocity
+# Useful When Backend And Proxy Have Same Command (/floodgate For Example)
+# And When command-forward-to-proxy In Config Is False
+# This Require Proxy Version To Be Installed
+
+# Command Excuter Config
+config:
+  # This Define Who Execute Commands
+  # CONSOLE For Console Command
+  # PLAYER For Player Command
+  # Not Effected To Command Prefix And Command That Run On Proxy
+  exe-as: CONSOLE
+
+  # This Will Make Command Run Only When The Player Is Online
+  # If Player Is Not Online The Player Name Will Queued In votifier.save-method In Main Config File
+  # If Player Join Late Than votifier.timeout In Main Config File The Player Will Get Nothing
+  run-only-when-player-online: true
+
+# List Of Command To Run In Order
+command:
+  - "CHAT:&a&lThank You %player% For Voting!&r"
+  - "CHATG:&e&l%player% Voted For This Server&r"
+  - "CHATG:&bYou Can Also Vote At https://mcstatus.io/tools/vote&r"
+  - "give %player% minecraft:air 2500"
+  - "CHAT:&c&lGived You 2500 Air LOL&r"
+  - "CMD-ON-PROXY:sent %player% lobby"

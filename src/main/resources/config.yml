@@ -55,7 +55,10 @@ votifier:
   # Timeout For Vote Request In Days
   # This Is When The Server Will Close The Vote Request
   # This Reduces The Size Of The Vote Request File If Players Just Vote With Random Username
-  # The Default Value Is 1 Day
+  # This Is 1 Day By Default Because Votes Website Usually Reset Every Day
+  # (In https://servers.eaglercraft.com/ For Example)
+  # +1 Days Every 0:00 Of Your Server Time
+  # 0 Or -1 To Disable
   timeout: 1
 
 # ============================================================================
