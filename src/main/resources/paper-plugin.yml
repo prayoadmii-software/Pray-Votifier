@@ -2,7 +2,7 @@ name: PrayVotifier
 version: '${plugin_version}'
 main: git.prayoadmii.prayvotifier.PrayVotifier
 api-version: '${minecraft_version}'
-description: A Simple Votifier-compatible Voting Plugin!
+description: A Simple Votifier-Compatible Voting Plugin!
 dependencies:
   server:
     CommandAPI:
