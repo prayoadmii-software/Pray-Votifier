@@ -1,0 +1,11 @@
+name: PrayVotifier
+version: '${plugin_version}'
+main: git.prayoadmii.prayvotifier.PrayVotifier
+api-version: '${minecraft_version}'
+description: A Simple Votifier-compatible Voting Plugin!
+dependencies:
+  server:
+    CommandAPI:
+      load: BEFORE
+      required: true
+      join-classpath: true

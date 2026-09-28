@@ -17,13 +17,13 @@ repositories {
 dependencies {
     implementation("org.bstats:bstats-bukkit:3.2.1")
 
-    paperweight.paperDevBundle("${minecraft_version}.build.+")
-
     compileOnly("dev.jorel:commandapi-paper-core:${commandapi_version}")
+
+    paperweight.paperDevBundle("${minecraft_version}.build.+")
 }
 
 processResources {
-    filesMatching('plugin.yml') {
+    filesMatching('paper-plugin.yml') {
         expand(
             plugin_version: project.version,
             minecraft_version: project.minecraft_version
@@ -35,8 +35,17 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(25)
 }
 
+tasks.register('javadocJar', Jar) {
+    archiveClassifier = 'javadoc'
+    from tasks.named('javadoc')
+}
+
+// tasks.named('build') {
+//     dependsOn tasks.named('javadocJar')
+// }
+
 tasks.jar {
-    archiveFileName = "prayvotifier-${project.version}.jar"
+    archiveFileName = "PrayVotifier-${project.version}-Paper.jar"
 }
 
 tasks.named('runServer') {
