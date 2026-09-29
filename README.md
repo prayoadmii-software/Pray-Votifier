@@ -42,3 +42,12 @@
 
 - **Votifier Is Not HTTP API You Need A Raw TCP Port Open**
 - **This Plugin Require [CommandAPI Plugin](https://modrinth.com/plugin/commandapi) To Work**
+
+---
+
+### **bStats (You Can Opt-Out In Your Server bStats Setting)**
+
+- **[Opt-Out bStats On Paper Based Server](https://www.google.com/search?q=Opt-Out+bStats+Paper+Server)**
+- **[Opt-Out bStats On Velocity](https://www.google.com/search?q=Opt-Out+bStats+Velocity)**
+
+![bStats Chart - BUKKUT/PRAY-VOTIFIER](https://bstats.org/signatures/bukkit/Pray%20Votifier.svg)
